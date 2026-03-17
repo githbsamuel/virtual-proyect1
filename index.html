@@ -41,12 +41,14 @@
 
 
         //CUBE
-        const geometry = new THREE.BoxGeometry(1,1,1);
-        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-        const cube = new THREE.Mesh(geometry, material);
-        cube.castShadow  = true;
-        cube.position.set(1,2,1);
-        scene.add(cube);
+        const geometry = new THREE.TorusKnotGeometry(1, 0.4, 100, 16);
+        const material = new THREE.MeshBasicMaterial( { color: "#f70071" } );
+        const torusKnot = new THREE.Mesh( geometry, material );
+        
+        torusKnot.castShadow  = true;
+        torusKnot.position.set(1,1,2);
+        
+        scene.add(torusKnot);
 
         //LIGHT
         const light = new THREE.DirectionalLight(0xffffff, 1, 10)
@@ -58,21 +60,21 @@
         //     PLANE
 
         const planeGeometry = new THREE.PlaneGeometry(20,20,32,32);
-        const planeMaterial = new THREE.MeshStandardMaterial({color: 0xff0000});
+        const planeMaterial = new THREE.MeshStandardMaterial({color: "gray"});
         const plane  = new THREE.Mesh(planeGeometry, planeMaterial);
         plane.receiveShadow = true;
         plane.position.set(0,0,0);
         scene.add(plane);
 
-        camera.position.z = 5;
-        camera.position.y = -3;
+        camera.position.z = 6;
+        camera.position.y = -4;
         camera.rotation.x = .5;
     
 
         function animate() {
             
-          /*  cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01; */
+            torusKnot.rotation.x += 0.01;
+            torusKnot.rotation.y += 0.01; 
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
         }
