@@ -1,5 +1,8 @@
 # Virtual Proyect
 
+Proyecto virtual: Habrir en pc.
+
+
 
 Lenguajes que se ocuparan: 
 
@@ -14,3 +17,8 @@ Backend:
 - Express.js
 
 
+
+
+
+
+dev: Samuel Lopez.
