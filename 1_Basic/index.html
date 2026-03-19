@@ -17,9 +17,9 @@
 
 <body>
     <script type="module">
-        import * as THREE from './three.module.js';
-        import { OrbitControls } from './orbitcontrols.js';
-
+        import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
+       import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js?module';
+       
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
@@ -56,13 +56,14 @@
         camera.position.y = -4;
         camera.rotation.x = .5;
 
-        const controls = new OrbitControls(camera, renderer.domElement);
+       const controls = new OrbitControls(camera, renderer.domElement);
         // controls.enableZoom = false;
         // controls.minDistance = 1;
         // controls.maxDistance = 15;
         //controls.screenSpacePanning = false;
         controls.enableDamping = true;
         controls.dampingFactor = 0.1;
+        
 
         function render() {
             torusKnot.rotation.x += 0.01;
